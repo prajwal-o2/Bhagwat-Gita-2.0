@@ -1,103 +1,104 @@
-import Image from "next/image";
+"use client";
+import AboutSection from "@/components/AboutSection";
+import AuthorSection from "@/components/AuthorSection";
+import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
+import HeroSection from "@/components/HeroSection";
+import TestimonialsSection from "@/components/TestimonialsSection";
+import { useEffect, useState } from "react";
 
 export default function Home() {
-  return (
-    <div className="font-sans grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="font-mono list-inside list-decimal text-sm/6 text-center sm:text-left">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] font-mono font-semibold px-1 py-0.5 rounded">
-              src/app/page.js
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
+  const [isVisible, setIsVisible] = useState({});
+  const [currentTestimonial, setCurrentTestimonial] = useState(0);
+  const [bookFormat, setBookFormat] = useState("hardcover");
+  const [quantity, setQuantity] = useState(1);
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setIsVisible((prev) => ({ ...prev, [entry.target.id]: true }));
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const elements = document.querySelectorAll("[data-animate]");
+    elements.forEach((el) => observer.observe(el));
+
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
+    }, 4000);
+    return () => clearInterval(interval);
+  }, []);
+
+  const testimonials = [
+    {
+      text: "Bhagwat Gita 2.0 gave me clarity in chaos. It doesn't just inspire — it transforms. Every chapter felt like a conversation with my higher self.",
+      author: "Aarav Mehta",
+      role: "Yoga Practitioner & Entrepreneur",
+      rating: 5,
+    },
+    {
+      text: "Prajwal Sharma has distilled deep spiritual wisdom into beautifully simple words. This book reminded me to trust life, do my karma, and let go.",
+      author: "Riya Kapoor",
+      role: "Wellness Blogger",
+      rating: 5,
+    },
+    {
+      text: "Not just a book — an awakening. It's modern, relatable, and soul-stirring. I found joy and peace where I never thought to look.",
+      author: "Kabir Joshi",
+      role: "Mindfulness Coach",
+      rating: 5,
+    },
+    {
+      text: "This book brought me back to my center. Reading it felt like coming home to my truth. Absolutely profound yet gracefully simple.",
+      author: "Nivedita Rao",
+      role: "Psychologist",
+      rating: 5,
+    },
+  ];
+  
+  const formatPrices = {
+    hardcover: 24.99,
+    paperback: 16.99,
+    ebook: 9.99,
+    audiobook: 19.99,
+  };
+
+  const handlePurchase = () => {
+    // Simulate payment gateway integration
+    const totalPrice = (formatPrices[bookFormat] * quantity).toFixed(2);
+    alert(
+      `Redirecting to payment gateway...\nFormat: ${bookFormat}\nQuantity: ${quantity}\nTotal: $${totalPrice}`
+    );
+  };
+
+
+
+  return (
+    <div className="relative">
+      <HeroSection
+        formatPrices={formatPrices}
+        bookFormat={bookFormat}
+        setBookFormat={setBookFormat}
+        quantity={quantity}
+        setQuantity={setQuantity}
+        handlePurchase={handlePurchase}
+      />
+    
+      <AboutSection isVisible={isVisible} />
+      <AuthorSection isVisible={isVisible} />
+      <TestimonialsSection testimonials={testimonials} currentTestimonial={currentTestimonial} setCurrentTestimonial={setCurrentTestimonial} />
+
+      <ContactSection isVisible={isVisible} />
+      <Footer />
     </div>
   );
 }
