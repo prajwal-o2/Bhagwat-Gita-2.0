@@ -12,7 +12,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata = {
-  title: "Bhagwat Gita 2.0",
+  title: "Bhagwad Gita 2.0",
   description: "Written By Prajwal Sharma",
 };
 

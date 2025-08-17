@@ -1,6 +1,7 @@
 import React from 'react';
 import { ChevronDown, Star, BookOpen, Heart, ShoppingCart, Share2 } from 'lucide-react';
 
+
 const HeroSection = ({ 
   bookFormat, 
   setBookFormat, 
@@ -54,11 +55,11 @@ const HeroSection = ({
 
         {/* Purchase Cards - Below both */}
         <div className="text-center">
-          <FormatSelector 
+          {/* <FormatSelector 
             formatPrices={formatPrices}
             bookFormat={bookFormat}
             setBookFormat={setBookFormat}
-          />
+          /> */}
 
           {/* Quantity and Purchase */}
           <PurchaseSection 
@@ -81,9 +82,11 @@ const FloatingBook = () => (
   <div className="relative">
     <div className="relative inline-block transform hover:scale-110 transition-all duration-700">
       <div className="absolute inset-0 bg-gradient-to-r from-amber-400/30 to-red-400/30 rounded-full blur-2xl scale-150 animate-pulse"></div>
-      
+
+      {/* Floating Book Container */}
       <div className="relative bg-gradient-to-br from-amber-800 via-orange-900 to-red-900 p-6 rounded-lg shadow-2xl transform rotate-6 hover:rotate-3 transition-all duration-500">
-        <div className="w-64 h-80 bg-gradient-to-b from-amber-100 to-orange-200 rounded-md p-4 flex flex-col justify-between border-4 border-amber-700 relative overflow-hidden">
+        <div className="w-64 h-80 rounded-md border-4 border-amber-700 relative overflow-hidden">
+          
           {/* Magical sparkles */}
           <div className="absolute inset-0">
             {[...Array(8)].map((_, i) => (
@@ -98,15 +101,14 @@ const FloatingBook = () => (
               />
             ))}
           </div>
-          
-          <div className="relative z-10">
-            <h1 className="text-2xl font-bold text-amber-900 mb-2">Bhagwat Gita 2.0</h1>
-            <p className="text-amber-700 text-xs">Ancient Wisdom for Modern Lives</p>
-          </div>
-          <div className="text-center relative z-10">
-            <BookOpen className="mx-auto text-amber-800 w-12 h-12 mb-2" />
-            <p className="text-amber-900 font-semibold text-sm">By Prajwal Sharma</p>
-          </div>
+
+          {/* Your Book Cover Image */}
+          <img
+            src={"FinalCoverPage.png"} 
+            alt="Bhagwad Gita 2.0 Cover"
+            style={{width:"100%", height:"100%"}}
+            className="object-cover"
+          />
         </div>
       </div>
 
@@ -125,7 +127,7 @@ const BookTitle = () => (
     <div className="space-y-8">
   
       <h2 className="text-5xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight tracking-tight">
-        <span className="block">BHAGWAT GITA</span>
+        <span className="block">Bhagwad GITA</span>
         <span className="block bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 bg-clip-text text-transparent animate-pulse">2.0</span>
       </h2>
   

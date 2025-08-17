@@ -42,7 +42,7 @@ const AuthorInfo = () => (
     </p>
 
     <p className="text-lg text-gray-700 leading-relaxed">
-      Whether it's a moment of silence or a burst of laughter, Prajwal embraces life with full presence and gratitude. Through <em>Bhagwat Gita 2.0</em>, he invites readers to pause, reflect, and rediscover the joy of being — right here, right now.
+      Whether it's a moment of silence or a burst of laughter, Prajwal embraces life with full presence and gratitude. Through <em>Bhagwad Gita 2.0</em>, he invites readers to pause, reflect, and rediscover the joy of being — right here, right now.
     </p>
 
     <div className="grid grid-cols-3 gap-4 pt-6">

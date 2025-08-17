@@ -14,7 +14,7 @@ const Footer = () => {
         <div className="flex justify-center items-center space-x-2 mb-6">
           <BookOpen className="w-8 h-8 text-amber-500" />
           <span className="text-2xl font-bold text-white tracking-wide">
-            Bhagwat Gita 2.0
+            Bhagwad Gita 2.0
           </span>
         </div>
 

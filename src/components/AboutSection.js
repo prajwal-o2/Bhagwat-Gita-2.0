@@ -118,7 +118,7 @@ const BookDescription = () => (
   <div className="space-y-6">
     <h3 className="text-3xl font-bold text-gray-900">Rediscover Life Through Karma, Joy & Surrender</h3>
     <p className="text-lg text-gray-700 leading-relaxed">
-      <strong>Bhagwat Gita 2.0</strong> is not a retelling — it's a revival. Crafted for the modern soul, this book bridges ancient spiritual truths with today's everyday struggles, choices, and aspirations.
+      <strong>Bhagwad Gita 2.0</strong> is not a retelling — it's a revival. Crafted for the modern soul, this book bridges ancient spiritual truths with today's everyday struggles, choices, and aspirations.
     </p>
     <p className="text-lg text-gray-700 leading-relaxed">
       Dive into timeless conversations about duty, identity, ego, and peace. This is a journey inward — one that encourages action without attachment, joy without condition, and love without boundaries.

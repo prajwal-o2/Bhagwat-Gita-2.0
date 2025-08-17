@@ -40,7 +40,7 @@ export default function Home() {
 
   const testimonials = [
     {
-      text: "Bhagwat Gita 2.0 gave me clarity in chaos. It doesn't just inspire — it transforms. Every chapter felt like a conversation with my higher self.",
+      text: "Bhagwad Gita 2.0 gave me clarity in chaos. It doesn't just inspire — it transforms. Every chapter felt like a conversation with my higher self.",
       author: "Aarav Mehta",
       role: "Yoga Practitioner & Entrepreneur",
       rating: 5,
@@ -66,10 +66,10 @@ export default function Home() {
   ];
   
   const formatPrices = {
-    hardcover: 24.99,
-    paperback: 16.99,
+    // hardcover: 24.99,
+    // paperback: 16.99,
     ebook: 9.99,
-    audiobook: 19.99,
+    // audiobook: 19.99,
   };
 
   const handlePurchase = () => {
