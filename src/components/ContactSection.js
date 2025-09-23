@@ -20,10 +20,10 @@ const ContactSection = ({ isVisible }) => {
 
     emailjs
       .sendForm(
-        'your_service_id',    // ⬅️ Replace with actual EmailJS Service ID
-        'your_template_id',   // ⬅️ Replace with actual Template ID
+        'service_abc6pge',    
+        'template_c1ayns2',   
         formRef.current,
-        'your_public_key'     // ⬅️ Replace with your Public Key
+        'W06jY6uEx0x9V2nQ6'     
       )
       .then(
         () => {
@@ -67,9 +67,9 @@ const ContactSection = ({ isVisible }) => {
 
 const ContactInfo = () => {
   const contactDetails = [
-    { icon: Mail, label: 'Email', value: 'author@example.com' },
-    { icon: Phone, label: 'Phone', value: '+1 (555) 123-4567' },
-    { icon: MapPin, label: 'Location', value: 'New York, NY' }
+    { icon: Mail, label: 'Email', value: 'prajwalsharam0001@gmail.com' },
+    { icon: Phone, label: 'Phone', value: '+91 9306542172' },
+    { icon: MapPin, label: 'Location', value: 'Chandigarh, India' }
   ];
 
   return (

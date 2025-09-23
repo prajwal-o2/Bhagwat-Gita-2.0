@@ -62,17 +62,17 @@ const HeroSection = ({
           /> */}
 
           {/* Quantity and Purchase */}
-          <PurchaseSection 
+          {/* <PurchaseSection 
             quantity={quantity}
             setQuantity={setQuantity}
             formatPrices={formatPrices}
             bookFormat={bookFormat}
             handlePurchase={handlePurchase}
-          />
+          /> */}
         </div>
 
         {/* Scroll Indicator */}
-        <ScrollIndicator />
+        {/* <ScrollIndicator /> */}
       </div>
     </section>
   );
@@ -87,21 +87,7 @@ const FloatingBook = () => (
       <div className="relative bg-gradient-to-br from-amber-800 via-orange-900 to-red-900 p-6 rounded-lg shadow-2xl transform rotate-6 hover:rotate-3 transition-all duration-500">
         <div className="w-64 h-80 rounded-md border-4 border-amber-700 relative overflow-hidden">
           
-          {/* Magical sparkles */}
-          <div className="absolute inset-0">
-            {[...Array(8)].map((_, i) => (
-              <div
-                key={i}
-                className="absolute w-2 h-2 bg-yellow-300 rounded-full animate-ping opacity-70"
-                style={{
-                  left: `${20 + Math.random() * 60}%`,
-                  top: `${20 + Math.random() * 60}%`,
-                  animationDelay: `${Math.random() * 2}s`
-                }}
-              />
-            ))}
-          </div>
-
+       
           {/* Your Book Cover Image */}
           <img
             src={"FinalCoverPage.png"} 
@@ -139,14 +125,14 @@ const BookTitle = () => (
         Discover a book that helps you not just live, but live meaningfully.
       </p>
   
-      <div className="flex items-center justify-center lg:justify-start space-x-8">
+      {/* <div className="flex items-center justify-center lg:justify-start space-x-8">
         <div className="flex items-center space-x-2">
           {[...Array(5)].map((_, i) => (
             <Star key={i} className="w-6 h-6 text-yellow-400 fill-current animate-pulse" style={{ animationDelay: `${i * 0.1}s` }} />
           ))}
           <span className="ml-3 text-amber-200 text-xl font-semibold">4.9/5 (3,200+ reviews)</span>
         </div>
-      </div>
+      </div> */}
     </div>
   );
   

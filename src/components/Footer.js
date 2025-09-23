@@ -14,15 +14,15 @@ const Footer = () => {
         <div className="flex justify-center items-center space-x-2 mb-6">
           <BookOpen className="w-8 h-8 text-amber-500" />
           <span className="text-2xl font-bold text-white tracking-wide">
-            Bhagwad Gita 2.0
+            Bhagwad Geeta 2.0
           </span>
         </div>
 
         <p className="text-gray-400 mb-6 max-w-2xl mx-auto">
-          © 2024 Prajwal Sharma. All rights reserved. Walk the path of karma, embrace joy, and surrender to the flow of life — one page at a time.
+          © 2025 Prajwal Sharma. All rights reserved. Walk the path of karma, embrace joy, and surrender to the flow of life — one page at a time.
         </p>
 
-        <div className="flex justify-center space-x-6">
+        {/* <div className="flex justify-center space-x-6">
           {footerLinks.map(({ label, href }) => (
             <a 
               key={label}
@@ -32,7 +32,7 @@ const Footer = () => {
               {label}
             </a>
           ))}
-        </div>
+        </div> */}
       </div>
     </footer>
   );

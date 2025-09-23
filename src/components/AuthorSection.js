@@ -38,11 +38,11 @@ const AuthorInfo = () => (
     <h3 className="text-2xl font-semibold text-amber-600">Prajwal Sharma</h3>
     
     <p className="text-lg text-gray-700 leading-relaxed">
-      Prajwal Sharma is a spiritual thinker, seeker, and storyteller who weaves the timeless truths of the Bhagavad Gita into the modern human experience. With a deep-rooted belief in <span className="text-amber-600 font-medium">karma</span> and the art of <span className="text-orange-500 font-medium">surrender</span>, his words resonate with authenticity and inner peace.
+      Prajwal Sharma is a spiritual thinker, seeker, and storyteller who weaves the timeless truths of the Bhagavad Geeta into the modern human experience. With a deep-rooted belief in <span className="text-amber-600 font-medium">karma</span> and the art of <span className="text-orange-500 font-medium">surrender</span>, his words resonate with authenticity and inner peace.
     </p>
 
     <p className="text-lg text-gray-700 leading-relaxed">
-      Whether it's a moment of silence or a burst of laughter, Prajwal embraces life with full presence and gratitude. Through <em>Bhagwad Gita 2.0</em>, he invites readers to pause, reflect, and rediscover the joy of being — right here, right now.
+      Whether it's a moment of silence or a burst of laughter, Prajwal embraces life with full presence and gratitude. Through <em>Bhagwad Geeta 2.0</em>, he invites readers to pause, reflect, and rediscover the joy of being — right here, right now.
     </p>
 
     <div className="grid grid-cols-3 gap-4 pt-6">

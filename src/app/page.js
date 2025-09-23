@@ -2,14 +2,15 @@
 import AboutSection from "@/components/AboutSection";
 import AuthorSection from "@/components/AuthorSection";
 import ContactSection from "@/components/ContactSection";
+import DonationSection from "@/components/DonationSection";
 import Footer from "@/components/Footer";
+import FreeDownloadSection from "@/components/FreeDowloadSection";
 import HeroSection from "@/components/HeroSection";
-import TestimonialsSection from "@/components/TestimonialsSection";
+import QuotesSection from "@/components/QuotesSection";
 import { useEffect, useState } from "react";
 
 export default function Home() {
   const [isVisible, setIsVisible] = useState({});
-  const [currentTestimonial, setCurrentTestimonial] = useState(0);
   const [bookFormat, setBookFormat] = useState("hardcover");
   const [quantity, setQuantity] = useState(1);
 
@@ -31,40 +32,24 @@ export default function Home() {
     return () => observer.disconnect();
   }, []);
 
-  useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentTestimonial((prev) => (prev + 1) % testimonials.length);
-    }, 4000);
-    return () => clearInterval(interval);
-  }, []);
-
-  const testimonials = [
+  const quotes = [
     {
-      text: "Bhagwad Gita 2.0 gave me clarity in chaos. It doesn't just inspire — it transforms. Every chapter felt like a conversation with my higher self.",
-      author: "Aarav Mehta",
-      role: "Yoga Practitioner & Entrepreneur",
-      rating: 5,
+      text: "True love begins where ego, power politics and possessiveness dissolve.",
     },
     {
-      text: "Prajwal Sharma has distilled deep spiritual wisdom into beautifully simple words. This book reminded me to trust life, do my karma, and let go.",
-      author: "Riya Kapoor",
-      role: "Wellness Blogger",
-      rating: 5,
+      text: "A man has the power to change his beliefs and hence also the power to change his reality.",
     },
     {
-      text: "Not just a book — an awakening. It's modern, relatable, and soul-stirring. I found joy and peace where I never thought to look.",
-      author: "Kabir Joshi",
-      role: "Mindfulness Coach",
-      rating: 5,
+      text: "Only permanent peace that is there in life is to totally experience and accept the life as it has come without avoiding, resisting or escaping",
     },
+    { text: "Abundance comes to those, who live abundantly for others." },
     {
-      text: "This book brought me back to my center. Reading it felt like coming home to my truth. Absolutely profound yet gracefully simple.",
-      author: "Nivedita Rao",
-      role: "Psychologist",
-      rating: 5,
+      text: "Life is meant to be experienced in its complete glory with desirable and undesirable experiences complementing each other.",
     },
   ];
-  
+
+  const [currentQuote, setCurrentQuote] = useState(0);
+
   const formatPrices = {
     // hardcover: 24.99,
     // paperback: 16.99,
@@ -80,8 +65,6 @@ export default function Home() {
     );
   };
 
-
-
   return (
     <div className="relative">
       <HeroSection
@@ -92,11 +75,18 @@ export default function Home() {
         setQuantity={setQuantity}
         handlePurchase={handlePurchase}
       />
-    
-      <AboutSection isVisible={isVisible} />
-      <AuthorSection isVisible={isVisible} />
-      <TestimonialsSection testimonials={testimonials} currentTestimonial={currentTestimonial} setCurrentTestimonial={setCurrentTestimonial} />
 
+      <FreeDownloadSection />
+
+      <DonationSection />
+
+      <AboutSection isVisible={isVisible} />
+      {/* <AuthorSection isVisible={isVisible} /> */}
+      <QuotesSection
+        currentQuote={currentQuote}
+        setCurrentQuote={setCurrentQuote}
+        quotes={quotes}
+      />
       <ContactSection isVisible={isVisible} />
       <Footer />
     </div>
