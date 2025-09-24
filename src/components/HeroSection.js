@@ -91,7 +91,7 @@ const FloatingBook = () => (
           {/* Your Book Cover Image */}
           <img
             src={"FinalCoverPage.png"} 
-            alt="Bhagwad Gita 2.0 Cover"
+            alt="Bhagwad Geeta 2.0 Cover"
             style={{width:"100%", height:"100%"}}
             className="object-cover"
           />
@@ -113,7 +113,7 @@ const BookTitle = () => (
     <div className="space-y-8">
   
       <h2 className="text-5xl lg:text-7xl xl:text-8xl font-bold text-white leading-tight tracking-tight">
-        <span className="block">Bhagwad GITA</span>
+        <span className="block">Bhagwad Geeta</span>
         <span className="block bg-gradient-to-r from-yellow-400 via-orange-400 to-red-500 bg-clip-text text-transparent animate-pulse">2.0</span>
       </h2>
   

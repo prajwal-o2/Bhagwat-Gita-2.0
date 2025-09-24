@@ -2,7 +2,7 @@
 import AboutSection from "@/components/AboutSection";
 import AuthorSection from "@/components/AuthorSection";
 import ContactSection from "@/components/ContactSection";
-import DonationSection from "@/components/DonationSection";
+import AppreciationSection from "@/components/AppreciationSection";
 import Footer from "@/components/Footer";
 import FreeDownloadSection from "@/components/FreeDowloadSection";
 import HeroSection from "@/components/HeroSection";
@@ -58,7 +58,7 @@ export default function Home() {
   };
 
   const handlePurchase = () => {
-    // Simulate payment gateway integration
+   
     const totalPrice = (formatPrices[bookFormat] * quantity).toFixed(2);
     alert(
       `Redirecting to payment gateway...\nFormat: ${bookFormat}\nQuantity: ${quantity}\nTotal: $${totalPrice}`
@@ -66,7 +66,8 @@ export default function Home() {
   };
 
   return (
-    <div className="relative">
+    <div className="relative overflow-x-hidden w-[100vw]">
+  
       <HeroSection
         formatPrices={formatPrices}
         bookFormat={bookFormat}
@@ -78,10 +79,10 @@ export default function Home() {
 
       <FreeDownloadSection />
 
-      <DonationSection />
+      <AppreciationSection />
 
       <AboutSection isVisible={isVisible} />
-      {/* <AuthorSection isVisible={isVisible} /> */}
+
       <QuotesSection
         currentQuote={currentQuote}
         setCurrentQuote={setCurrentQuote}
